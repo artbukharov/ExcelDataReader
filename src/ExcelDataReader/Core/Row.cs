@@ -11,6 +11,11 @@ namespace ExcelDataReader.Core
         public int RowIndex { get; set; }
 
         /// <summary>
+        /// Gets or sets the ouline level for the row.
+        /// </summary>
+        public int OutlineLevel { get; set; }
+
+        /// <summary>
         /// Gets or sets the height of this row in points. Zero if hidden or collapsed.
         /// </summary>
         public double Height { get; set; }

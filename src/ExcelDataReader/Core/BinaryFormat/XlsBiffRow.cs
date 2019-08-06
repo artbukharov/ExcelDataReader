@@ -35,6 +35,7 @@ namespace ExcelDataReader.Core.BinaryFormat
                 var flags = (RowHeightFlags)ReadUInt16(0xC);
                 RowHeight = (flags & RowHeightFlags.DyZero) == 0 ? RowHeight : 0;
 
+                OutlineLevel = ReadUInt16(0xC) & 0x7;
                 UseXFormat = (flags & RowHeightFlags.GhostDirty) != 0;
                 XFormat = (ushort)(ReadUInt16(0xE) & 0xFFF);
             }
@@ -83,5 +84,10 @@ namespace ExcelDataReader.Core.BinaryFormat
         /// Gets the default format for this row
         /// </summary>
         public ushort XFormat { get; }
+
+        /// <summary>
+        /// Gets the outline level for the row.
+        /// </summary>
+        public int OutlineLevel { get; }
     }
 }

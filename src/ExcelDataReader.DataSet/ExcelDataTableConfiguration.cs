@@ -31,5 +31,10 @@ namespace ExcelDataReader
         /// Gets or sets a callback to determine whether to include the specific column in the DataTable. Called once per column after reading the headers.
         /// </summary>
         public Func<IExcelDataReader, int, bool> FilterColumn { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether a column should be shown containing excel outline levels within the datatable. Applies only to excel workbooks.
+        /// </summary>
+        public bool DisplayExcelOutlineLevels { get; set; }
     }
 }

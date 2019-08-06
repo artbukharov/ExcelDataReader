@@ -47,6 +47,7 @@ namespace TestApp
             this.firstRowNamesCheckBox = new System.Windows.Forms.CheckBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.showOutlineLevels = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -147,11 +148,25 @@ namespace TestApp
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // showOutlineLevels
+            // 
+            this.showOutlineLevels.AutoSize = true;
+            this.showOutlineLevels.Checked = true;
+            this.showOutlineLevels.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showOutlineLevels.Location = new System.Drawing.Point(151, 76);
+            this.showOutlineLevels.Margin = new System.Windows.Forms.Padding(2);
+            this.showOutlineLevels.Name = "showOutlineLevels";
+            this.showOutlineLevels.Size = new System.Drawing.Size(87, 17);
+            this.showOutlineLevels.TabIndex = 8;
+            this.showOutlineLevels.Text = "outline levels";
+            this.showOutlineLevels.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 706);
+            this.Controls.Add(this.showOutlineLevels);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.firstRowNamesCheckBox);
             this.Controls.Add(this.Sheet);
@@ -184,6 +199,7 @@ namespace TestApp
         private System.Windows.Forms.CheckBox firstRowNamesCheckBox;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private CheckBox showOutlineLevels;
         private DataSet ds;
 
         public Form1()
@@ -257,7 +273,8 @@ namespace TestApp
                         UseColumnDataType = false,
                         ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
                         {
-                            UseHeaderRow = firstRowNamesCheckBox.Checked
+                            UseHeaderRow = firstRowNamesCheckBox.Checked,
+                            DisplayExcelOutlineLevels = showOutlineLevels.Checked
                         }
                     });
                 }

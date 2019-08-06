@@ -240,15 +240,18 @@ namespace ExcelDataReader.Core.BinaryFormat
             if (!result.Rows.TryGetValue(rowIndex, out var currentRow))
             {
                 var height = DefaultRowHeight / 20.0;
+                int outlineLevel = 0;
                 if (RowOffsetMap.TryGetValue(rowIndex, out var rowOffset) && rowOffset.Record != null)
                 {
                     height = (rowOffset.Record.UseDefaultRowHeight ? DefaultRowHeight : rowOffset.Record.RowHeight) / 20.0;
+                    outlineLevel = rowOffset.Record.OutlineLevel;
                 }
 
                 currentRow = new Row()
                 {
                     RowIndex = rowIndex,
                     Height = height,
+                    OutlineLevel = outlineLevel,
                     Cells = new List<Cell>()
                 };
 

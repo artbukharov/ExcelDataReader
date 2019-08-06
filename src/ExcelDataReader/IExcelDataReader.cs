@@ -48,6 +48,11 @@ namespace ExcelDataReader
         double RowHeight { get; }
 
         /// <summary>
+        /// Gets the outline level for the row.
+        /// </summary>
+        int OutlineLevel { get; }
+
+        /// <summary>
         /// Seeks to the first result.
         /// </summary>
         void Reset();

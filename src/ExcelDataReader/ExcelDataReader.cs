@@ -48,6 +48,8 @@ namespace ExcelDataReader
 
         public double RowHeight => _rowIterator?.Current.Height ?? 0;
 
+        public int OutlineLevel => _rowIterator?.Current.OutlineLevel ?? 0;
+
         protected TWorkbook Workbook { get; set; }
 
         protected Cell[] RowCells { get; set; }

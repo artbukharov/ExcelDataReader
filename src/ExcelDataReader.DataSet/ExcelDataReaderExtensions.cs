@@ -112,6 +112,11 @@ namespace ExcelDataReader
                         columnIndices.Add(i);
                     }
 
+                    if (configuration.DisplayExcelOutlineLevels) {
+                        var column = new DataColumn("[OutlineLevel]", typeof(object)) { Caption = "[OutlineLevel]" };
+                        result.Columns.Add(column);
+                    }
+
                     result.BeginLoadData();
                     first = false;
 
@@ -147,9 +152,15 @@ namespace ExcelDataReader
                     var value = self.GetValue(columnIndex);
                     row[i] = value;
                 }
-                
+
+                if (configuration.DisplayExcelOutlineLevels) {
+                    row[columnIndices.Count] = self.OutlineLevel;
+                }
+
                 result.Rows.Add(row);
             }
+
+           
 
             result.EndLoadData();
             return result;
