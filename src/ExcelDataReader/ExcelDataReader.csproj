@@ -7,7 +7,7 @@
     <Authors>ExcelDataReader developers</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>ExcelDataReader</AssemblyName>
-    <PackageId>ExcelDataReader</PackageId>
+    <PackageId>upwi.ExcelDataReader</PackageId>
     <PackageTags>excel;xls;xlsx</PackageTags>
     <PackageIconUrl>https://nugetgallery.blob.core.windows.net/icons/ExcelDataReader.2.1.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/ExcelDataReader/ExcelDataReader</PackageProjectUrl>
