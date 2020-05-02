@@ -7,7 +7,6 @@
     <Authors>ExcelDataReader developers</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>ExcelDataReader</AssemblyName>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <PackageId>ExcelDataReader</PackageId>
     <PackageTags>excel;xls;xlsx</PackageTags>
     <PackageIconUrl>https://nugetgallery.blob.core.windows.net/icons/ExcelDataReader.2.1.png</PackageIconUrl>
